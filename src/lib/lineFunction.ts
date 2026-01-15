@@ -158,6 +158,7 @@ export const postbackTemp = async ({ userLineId, takecarepersonId }: PostbackSaf
           };
           const resNewId = await api.saveExtendedHelp(data);
           extendedHelpId = resNewId;
+          console.log("🚍 ~ postbackTemp ~ Creating new extended help case.");
         }
 
         // ส่งการแจ้งเตือนกลับ
@@ -171,9 +172,11 @@ export const postbackTemp = async ({ userLineId, takecarepersonId }: PostbackSaf
 
         // ส่ง Line ID กลับเป็นตัวบ่งชี้ว่า success (เหมือน safezone)
         return resUser.users_line_id;
+      }else{
+        console.log("🚨 ~ postbackTemp ~ No resSafezone found.");
       }
     }
-
+    console.log("🚨 ~ postbackTemp ~ No resUser or resTakecareperson found.");
     return null;
   } catch (error) {
     console.log("🚨 ~ postbackTemp ~ error:", error);
