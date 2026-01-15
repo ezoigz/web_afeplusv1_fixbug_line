@@ -490,7 +490,11 @@ export default async function handle(
                             });
                         } else {
                             console.log(
-                                "No reply token received for temperature postback.:❌❌"
+                                "takecarepersonId: " +
+                                    postback.takecarepersonId +
+                                    "userLineId: " +
+                                    postback.userLineId +
+                                    "\nNo reply token received for temperature postback.:❌❌"
                             );
                         }
                     }
