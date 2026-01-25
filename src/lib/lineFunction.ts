@@ -3,6 +3,7 @@ import * as api from "@/lib/listAPI";
 import axios from "axios";
 
 import { replyNotification, replyNoti } from "@/utils/apiLineGroup";
+<<<<<<< HEAD
 
 // ตัวแปรสำหรับเก็บเวลาการแจ้งเตือนล่าสุดในหน่วยความจำ (RAM) เพื่อป้องกันการส่งซ้ำ
 const alertCache: { [key: string]: number } = {};
@@ -19,6 +20,8 @@ const shouldAlert = (takecareId: number, type: string) => {
     }
     return false;
 };
+=======
+>>>>>>> b1c0a682b927b48e0288a5742bd6f32eddddfbdc
 
 interface PostbackSafezoneProps {
     userLineId: string;
@@ -50,6 +53,7 @@ export const postbackHeartRate = async ({
         );
 
         if (resUser && resTakecareperson) {
+<<<<<<< HEAD
             // ถ้าเพิ่งแจ้งเตือนหัวใจเต้นผิดปกติไปไม่ถึง 5 นาที ให้ข้ามการส่ง LINE รอบนี้ไปก่อน
             if (!shouldAlert(resTakecareperson.takecare_id, 'heartrate')) {
                 console.log("⏳ Skip HeartRate Alert");
@@ -67,6 +71,19 @@ export const postbackHeartRate = async ({
                     resSafezone.safezone_id
                 );
 
+=======
+            const resSafezone = await api.getSafezone(
+                resTakecareperson.takecare_id,
+                resUser.users_id
+            );
+            if (resSafezone) {
+                const responseLocation = await getLocation(
+                    resTakecareperson.takecare_id,
+                    resUser.users_id,
+                    resSafezone.safezone_id
+                );
+
+>>>>>>> b1c0a682b927b48e0288a5742bd6f32eddddfbdc
                 const resExtendedHelp = await api.getExtendedHelp(
                     resTakecareperson.takecare_id,
                     resUser.users_id
@@ -209,11 +226,14 @@ export const postbackTemp = async ({
         );
 
         if (resUser && resTakecareperson) {
+<<<<<<< HEAD
             // ถ้าเพิ่งแจ้งเตือนอุณหภูมิผิดปกติไปไม่ถึง 5 นาที ให้ข้ามการส่ง LINE รอบนี้ไปก่อน
             if (!shouldAlert(resTakecareperson.takecare_id, 'temp')) {
                 console.log("⏳ Skip Temp Alert");
                 return resUser.users_line_id;
             }
+=======
+>>>>>>> b1c0a682b927b48e0288a5742bd6f32eddddfbdc
             const resSafezone = await api.getSafezone(
                 resTakecareperson.takecare_id,
                 resUser.users_id
@@ -292,6 +312,7 @@ export const postbackSafezone = async ({
         );
 
         if (resUser && resTakecareperson) {
+<<<<<<< HEAD
             // ถ้าเพิ่งแจ้งเตือนออกนอกโซนปลอดภัยไปไม่ถึง 5 นาที ให้ข้ามการส่ง LINE รอบนี้ไปก่อน
             if (!shouldAlert(resTakecareperson.takecare_id, 'safezone')) {
                 console.log("⏳ Skip Safezone Alert");
@@ -329,6 +350,40 @@ export const postbackSafezone = async ({
                     const resExtendedHelpId = await api.saveExtendedHelp(data);
                     extendedHelpId = resExtendedHelpId;
                 }
+=======
+            const resSafezone = await api.getSafezone(
+                resTakecareperson.takecare_id,
+                resUser.users_id
+            );
+            if (resSafezone) {
+                const responeLocation = await getLocation(
+                    resTakecareperson.takecare_id,
+                    resUser.users_id,
+                    resSafezone.safezone_id
+                );
+                const resExtendedHelp = await api.getExtendedHelp(
+                    resTakecareperson.takecare_id,
+                    resUser.users_id
+                );
+                let extendedHelpId = null;
+                if (resExtendedHelp) {
+                    extendedHelpId = resExtendedHelp.exten_id;
+                    await api.updateExtendedHelp({
+                        extenId: extendedHelpId,
+                        typeStatus: "sendAgain",
+                    });
+                } else {
+                    const data = {
+                        takecareId: resTakecareperson.takecare_id,
+                        usersId: resUser.users_id,
+                        typeStatus: "save",
+                        safezLatitude: resSafezone.safez_latitude,
+                        safezLongitude: resSafezone.safez_longitude,
+                    };
+                    const resExtendedHelpId = await api.saveExtendedHelp(data);
+                    extendedHelpId = resExtendedHelpId;
+                }
+>>>>>>> b1c0a682b927b48e0288a5742bd6f32eddddfbdc
 
                 await replyNotification({
                     resUser,
