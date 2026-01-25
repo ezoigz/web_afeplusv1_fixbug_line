@@ -252,6 +252,8 @@ export default async function handle(req: NextApiRequest, res: NextApiResponse) 
 							console.log("Temperature request sent, replying with notification.");
 							await replyNotification({ replyToken, message: 'ส่งคำขอความช่วยเหลือแล้ว' });
 
+						} else {
+						
 						}
 					}
 					// ---- เพิ่มส่วนนี้เข้าไป ----
