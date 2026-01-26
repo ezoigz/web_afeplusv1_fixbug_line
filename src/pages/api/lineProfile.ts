@@ -155,7 +155,7 @@ const getTemperature = async (takecare_id: number, users_id: number) => {
     }
 };
 const getHeartRate = async (takecare_id: number, users_id: number) => {
-<<<<<<< HEAD
+    
 	console.log(`Fetching heart rate setting data for takecare_id: ${takecare_id}, users_id: ${users_id}`);
 	const response = await axios.get(`${process.env.WEB_DOMAIN}/api/setting/getHeartRate?takecare_id=${takecare_id}&users_id=${users_id}`);
 	if (response.data?.data) {
