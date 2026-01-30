@@ -2,7 +2,7 @@
     "env": {
         "APP_STATUS": "DEV",
         "GOOGLE_MAPS_API_KEY": "AIzaSyAMonnyC5yaPermw0V49UdEAuw4cayeqWs",
-        "CHANNEL_ACCESS_TOKEN_LINE": "Jr+Rr9YBDJq9O/3TGEQh3SUdaojioviTMgXyYTuzP6s1/yie1t4VeATJ3ybEQ17PZ59M+l4hTTAvd/KeLSdidax8YHlVBBdxbIH/rVTceF5adCjilwEVH0aY5XgGQJwgdN50Vn0+XXMq57am9tguWAdB04t89/1O/w1cDnyilFU=",
+        "CHANNEL_ACCESS_TOKEN_LINE": "6SupVHLOUN4Yj2RDu1Fwi2fo1vBWg4MBhm15WDdhfNo5uBspw5ogWhsjZetFm/vYX62z7doCejenTf39DDEDV7vvBcfDvcUgBiImjPg5WcvNYwS4msYcisk8NxOqZ/sHr0xfHWBBabZRaeSnVexZ0gdB04t89/1O/w1cDnyilFU=",
         "WEB_API_URL": "http://localhost",
         "WEB_DOMAIN": "http://localhost",
         "CRYPTOJS_SECRET_KEY": "sepaw_001",
