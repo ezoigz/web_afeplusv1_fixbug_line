@@ -21,7 +21,7 @@ export default async function handle(req: NextApiRequest, res: NextApiResponse) 
                     takecare_id: Number(takecare_id),
                 },
                 orderBy: {
-                    location_id: 'desc', // เรียงลำดับตาม location_id จากล่าสุด
+                    locat_timestamp: 'desc', // เรียงลำดับตาม locat_timestamp จากล่าสุด
                 },
             });
 
