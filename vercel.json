@@ -1,11 +1,11 @@
-// {
-//     "env": {
-//       "APP_STATUS": "DEV",
-//       "GOOGLE_MAPS_API_KEY": "AIzaSyAMonnyC5yaPermw0V49UdEAuw4cayeqWs",
-//       "CHANNEL_ACCESS_TOKEN_LINE": "SLzXRBYL787EtUc6e3+64tRHotmFAgzCvIOIgUF9v8tPosFA2PXEOTtuStPD0mO7jJwYPgbcG0tHvlQ2UH6wiJ910RnnR09+xyZd75QEQ9ZVgqVzSvOtTkJUd+eYJ8PPh0vTazQoaeVjaGTyKK69LgdB04t89/1O/w1cDnyilFU=",
-//       "WEB_API_URL": "http://localhost",
-//       "WEB_DOMAIN": "http://localhost",
-//       "CRYPTOJS_SECRET_KEY": "sepaw_001",
-//       "SECRET_KEY": "AIzaSyAMonny"
-//     }
-//   }
+{
+    "env": {
+        "APP_STATUS": "DEV",
+        "GOOGLE_MAPS_API_KEY": "AIzaSyAMonnyC5yaPermw0V49UdEAuw4cayeqWs",
+        "CHANNEL_ACCESS_TOKEN_LINE": "Jr+Rr9YBDJq9O/3TGEQh3SUdaojioviTMgXyYTuzP6s1/yie1t4VeATJ3ybEQ17PZ59M+l4hTTAvd/KeLSdidax8YHlVBBdxbIH/rVTceF5adCjilwEVH0aY5XgGQJwgdN50Vn0+XXMq57am9tguWAdB04t89/1O/w1cDnyilFU=",
+        "WEB_API_URL": "http://localhost",
+        "WEB_DOMAIN": "http://localhost",
+        "CRYPTOJS_SECRET_KEY": "sepaw_001",
+        "SECRET_KEY": "chawalit_001"
+    }
+}
